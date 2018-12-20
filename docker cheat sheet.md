@@ -3,7 +3,7 @@
 ## Docker
 - list all containers
 
-´> docker ps -a´
+`> docker ps -a`
 
 - list all local images
 
