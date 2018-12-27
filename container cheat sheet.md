@@ -53,7 +53,7 @@ Some useful commands i found helpful while playing around with containers
 
 ### Dockerfile
 
-- define Master Image
+- define master image
 
 `FROM image_name:tag`
 
@@ -61,7 +61,7 @@ Some useful commands i found helpful while playing around with containers
 
 `RUN "command"`
 
-- expose certain port to hostport
+- expose certain port to host_port
 
 `EXPOSE "port"`
 
