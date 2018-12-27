@@ -51,16 +51,32 @@ Some useful commands i found helpful while playing around with containers
 
 `> docker network inspect "network"`
 
----
+### Dockerfile
+
+- define Master Image
+
+`FROM image_name:tag`
+
+- run a command
+
+`RUN "command"`
+
+- expose certain port to hostport
+
+`EXPOSE "port"`
+
+- run a specific command
+
+`CMD ["command", "argument"]`
 
 ## Docker-Compose
 
 
----
+
 
 ## Docker Swarm
 
 
----
+
 
 # Kubernetes

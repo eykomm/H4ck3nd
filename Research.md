@@ -30,9 +30,3 @@
 
 
 ### OpenVPN:
-
-
-### Docker Compose:
-
-
-### Docker Swarm:
