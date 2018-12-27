@@ -19,7 +19,16 @@
 
 - remove container
 
-`docker rm containerid/name`
+`> docker rm containerid/name`
+
+
+### Docker Network
+
+- list current networks
+
+`> docker network ls`
+
+
 
 ## Docker-Compose
 
