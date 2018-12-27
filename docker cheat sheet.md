@@ -1,17 +1,12 @@
 # Docker Cheat Sheet
 
 ## Docker
+
+#### Container 
+
 - list all containers
 
 `> docker ps -a`
-
-- list all local images
-
-`> docker image ls`
-
-- create child image 
-
-`> docker commit "old image" "new child image"`
 
 - start container (custom name, expose port to host)
 
@@ -21,12 +16,40 @@
 
 `> docker rm containerid/name`
 
+- start container in background mode (detached) interactive and tty (see in and out) 
 
-### Docker Network
+`> docker run -dit --name "container_name" -p host_port:container_port "image_name" /bin/bash`
+
+- connect to container running in background mode
+
+`> docker attach "container_name"`
+
+
+### Images
+
+- list all local images
+
+`> docker image ls`
+
+- create child image 
+
+`> docker commit "old image" "new child image"`
+
+- remove image
+
+`> docker rmi "image_name"`
+
+
+### Network
 
 - list current networks
 
 `> docker network ls`
+
+- inspect network settings and connected containers
+
+`> docker network inspect "network"`
+
 
 
 
