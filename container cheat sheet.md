@@ -1,8 +1,9 @@
-# Docker Cheat Sheet
+# Container Cheat Sheet
+Some useful commands i found helpful while playing around with containers
 
 ## Docker
 
-#### Container 
+#### Container
 
 - list all containers
 
@@ -16,7 +17,7 @@
 
 `> docker rm containerid/name`
 
-- start container in background mode (detached) interactive and tty (see in and out) 
+- start container in background mode (detached) interactive and tty (see in and out)
 
 `> docker run -dit --name "container_name" -p host_port:container_port "image_name" /bin/bash`
 
@@ -31,7 +32,7 @@
 
 `> docker image ls`
 
-- create child image 
+- create child image
 
 `> docker commit "old image" "new child image"`
 
@@ -50,10 +51,16 @@
 
 `> docker network inspect "network"`
 
-
-
+---
 
 ## Docker-Compose
 
 
+---
+
 ## Docker Swarm
+
+
+---
+
+# Kubernetes
