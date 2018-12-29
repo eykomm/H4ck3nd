@@ -25,6 +25,18 @@ Some useful commands i found helpful while playing around with containers
 
 `> docker attach "container_name"`
 
+- detach from container without stopping
+
+`CTRL p+q`
+
+- start container in specific network
+
+`> docker run --network "net_name" "image"`
+
+- execute command in running container
+
+`> docker execute "container_name" "command"`
+
 
 ### Images
 
@@ -50,6 +62,19 @@ Some useful commands i found helpful while playing around with containers
 - inspect network settings and connected containers
 
 `> docker network inspect "network"`
+
+- create custom bridged networks
+
+`> docker network create --driver bridge "bridge_net_name"`
+
+- remove custom network
+
+`> docker network rm "net_name"`
+
+- expose container to host networks
+
+`> docker run --network host "image"`
+
 
 ### Dockerfile
 
