@@ -46,7 +46,7 @@ Some useful commands i found helpful while playing around with containers
 
 - create child image
 
-`> docker commit "old image" "new child image"`
+`> docker commit "container_name" "new child image"`
 
 - remove image
 
