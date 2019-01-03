@@ -37,6 +37,30 @@ Some useful commands i found helpful while playing around with containers
 
 `> docker execute "container_name" "command"`
 
+- copy a file from host to the container
+
+`> docker cp "file" "container_id:/path/"`
+
+- map data from another container
+
+`> docker run ... --volumes-from "other_cont_name"`
+
+- export a container
+
+`> docker export "container_name" > "backup_cont.tar"`
+
+- import an exported container
+
+`> docker import "backup_cont.tar"`
+
+- link two container
+
+`> docker run ... --link "source_cont:alias"`
+
+- link a data volume from the hostport read only (ro)
+
+`> docker run ... -v "/host/path:/container/path:ro"`
+
 
 ### Images
 
@@ -74,6 +98,14 @@ Some useful commands i found helpful while playing around with containers
 - expose container to host networks
 
 `> docker run --network host "image"`
+
+- attach a new network to a existing containers with an alias
+
+`> docker network connect --alias "alias" "net_name" "container_name"`
+
+- disconnect a container from a network
+
+`> docker network disconnect "net_name" "container_name"`
 
 
 ### Dockerfile
