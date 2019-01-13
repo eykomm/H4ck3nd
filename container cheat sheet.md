@@ -3,7 +3,7 @@ Some useful commands i found helpful while playing around with containers
 
 ## Docker
 
-#### Container
+### Container
 
 - list all containers
 
@@ -126,7 +126,7 @@ Some useful commands i found helpful while playing around with containers
 
 `CMD ["command", "argument"]`
 
-## Docker-Compose
+## Docker Compose
 
 
 
@@ -136,4 +136,63 @@ Some useful commands i found helpful while playing around with containers
 
 
 
-# Kubernetes
+## Kubernetes (K8s)
+
+- show cluster info
+
+`> kubectl cluster-info`
+
+- show active nodes
+
+`> kubectl get nodes`
+
+- show running pods
+
+`> kubectl get pods`
+
+
+### K8s Deployment
+
+- deploy a container in the cluster with 2 replicas running at the same time
+
+`> kubectl run "depl_name" --image="repo/image" --port="port" --replicas=2`
+
+- expose a dynamic port on a running deployment
+
+`> kubectl expose deployment "depl_name" --port="port" --type=NodePort `
+
+- get all pods for a specific namespace
+
+`> kubectl get pod -n "namespace"`
+
+
+### K8s Multinode cluster
+
+- start master node with known tokens
+
+`> kubeadm init --token="token" --Kubernetes-version $(kubeadm version -o short)`
+
+- list known tokens
+
+`> kubeadm token list`
+
+- get a node to join the cluster
+
+`> kubeadm join --discovery-token-unsafe-skip-ca-verification --token="token" "ip_master:6443"`
+
+- get all connected nodes (on master)
+
+`> kubectl get nodes`
+
+
+### K8s Network
+
+- deploy a WaveWorks Addon for the Container Network Interface (CNI)
+
+`> kubectl apply -f "waveworks.config"`
+
+- use proxy instead of ip
+
+`> kubectl proxy`
+
+### K8s Dashboard
