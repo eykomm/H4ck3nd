@@ -1,0 +1,67 @@
+# OpSec Manifesto
+
+Small guide for basic OpSec measures
+
+## Hardware
+Allways use separate Air Gap Hardware for different purposes (e.g. Laptop 1 for personal use, Laptop 2 for security research)
+
+### BIOS
+1. Allways enable BIOS protection and disable boot menu so one could not start a system from another medium.
+
+2. Disable all Boot options and select the right boot order (e.g. just boot from ssd nothing else)
+
+### Secure Boot
+
+### TPM
+
+
+## OS & Software
+Choosing the right OS is difficult and depends heavily on the use case. Try unsing a very simple stripped down / already hardened OS.
+
+Some examples:
+
+- Whonix:
+- Tails:
+- Kali:
+
+### Source DL and Checksums
+Allways compare the CRC of your Download!!
+
+### Persistence
+
+### Full Disk Encryption
+
+### Vaults
+
+### Container
+
+### APP Sandboxing
+
+### General Hardening
+
+
+## Network
+
+### MAC
+Change MAC Address constantly to avoid re-identification in different Networks.
+
+### Tor
+
+### VPN
+
+### Proxy
+
+### SSL
+
+### Certificates & Keys
+
+
+## Passwords & Accounts
+
+### Accounts
+
+### Passwords
+
+### Password Manager
+
+### MFA
