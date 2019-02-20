@@ -196,3 +196,28 @@ Some useful commands i found helpful while playing around with containers
 `> kubectl proxy`
 
 ### K8s Dashboard
+
+## Projects
+
+### ELK Stack with Metricbeat for Monitoring
+
+- Pull images
+
+`> docker pull docker.elastic.com/elasticsearch/elasticsearch:6.6.1`
+`> docker pull docker.elastic.com/kibana/kibana:6.6.1`
+`> docker pull docker.elastic.com/beats/metricbeats:6.6.1`
+
+- Create network
+
+`> docker network create elastic`
+
+- Create Metric Beat yml
+--> see github for yml
+
+- Start container
+
+`> docker run --detach --net=elastic --name=elasticsearch -e "discovery.type=single-node" -p 9200:9200 -p 9300:9300 docker.elastic.co/elasticsearch/elasticsearch:6.6.1`
+
+`> docker run --detach --net=elastic --name=kibana -p 5601:5601 docker.elastic.co/kibana/kibana:6.6.1`
+
+`> docker run --detach --net=elastic --name=metric -u root -v /Users/lars/Hackspace/Docker/metricbeat/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml -v /var/run/docker.sock:/var/run/docker.sock docker.elastic.co/beats/metricbeat:6.6.1`
