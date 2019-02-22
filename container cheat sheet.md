@@ -61,6 +61,8 @@ Some useful commands i found helpful while playing around with containers
 
 `> docker run ... -v "/host/path:/container/path:ro"`
 
+- show used resoources by running container
+`> docker stats --no-stream`
 
 ### Images
 
