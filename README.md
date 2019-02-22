@@ -1,8 +1,15 @@
 # H4ck3nd
-hardened Backend POC
+POC for container based hardened Backend
+
+# Ideas
 
 - rout all traffic through tor
 - hidden service in a container
 - Deployment / Orchestration via tor
 - secure connection to deployed sensors/slaves
+
+# POCs
+
+- Gitlab
+- Monitoring via Elasticsearch 
 - 
