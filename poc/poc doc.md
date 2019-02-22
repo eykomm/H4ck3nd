@@ -326,3 +326,20 @@ USER packetbeat
 - run container
 
 `> docker run -d --name packet --net=elastic --cap-add=NET_ADMIN --cap-add=NET_RAW <image_name>`
+
+
+
+## GitLab CI/CD Pipeline
+
+- Pull images
+
+`> docker pull gitlab/gitlab-ce`
+
+- run container
+
+`docker run -d --name gitlab -v -v -v -p -p gitlab/gitlab-ce`
+
+
+## Hugo static Website Generator
+
+- Pull images
