@@ -328,8 +328,7 @@ USER packetbeat
 `> docker run -d --name packet --net=elastic --cap-add=NET_ADMIN --cap-add=NET_RAW <image_name>`
 
 
-
-## GitLab CI/CD Pipeline
+## GitLab custom CI/CD Pipeline & Container Registry
 
 - Pull images
 
@@ -337,7 +336,9 @@ USER packetbeat
 
 - run container
 
-`docker run -d --name gitlab -v -v -v -p -p gitlab/gitlab-ce`
+`docker run -d --name gitlab --restart always -v /srv/gitlab/config:/etc/gitlab -v /srv/gitlab/data:/var/opt/gitlab -v /srv/gitlab/logs:/var/log/gitlab -p 80:80 -p 443:443 -p 22:22 gitlab/gitlab-ce`
+
+- create gitlab-ci.yml
 
 
 ## Hugo static Website Generator
