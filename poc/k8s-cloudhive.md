@@ -1,9 +1,4 @@
-# Kubernetes@Hetzner
-
-## API Token Hetzner
-
-Kubernetes Token:
-OxdbWhIxnqkidzg8aJNEKpEJuzmEP2ea7rnMKK979Uo7XWsly5oVLMVeHDoQwEji
+# Kubernetes@CloudHive.eu
 
 ## Prequisites
 
