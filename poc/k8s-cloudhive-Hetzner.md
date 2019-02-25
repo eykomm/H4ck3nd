@@ -48,6 +48,10 @@ folllowing the tutorial on:
 
 2) https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
 
-### install Docker-CE
+### install Docker-CE on Nodes
+
+following guide:
+
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 ###
