@@ -1,12 +1,13 @@
 # Kubernetes@Cloudhive
 
+Documentation of creating a public K8S cluster
+
 ## Prequisites
 
 ### Nodes
-physical / virtual machines running in K8S cluster
+physical / virtual machines running in a K8S cluster
 
 ### Worker
-
 
 ### Pods
 
@@ -20,25 +21,19 @@ By default Pods are isolated. Ingress provides communication channel to a Servic
 
 #### Ingress Controller
 
-
 ### Deployment
 
 Abstract Layer for managing Pods
 
-
 ### CNI / Network Plugins
 
-Container Network Interface.
+Container Network Interface. Handling cluster overlay network.
 
 ### Replicas
 
-
-
 ### Helm & Tiller
 
-
 ### Sidecars
-
 
 ### DaemonSets
 
