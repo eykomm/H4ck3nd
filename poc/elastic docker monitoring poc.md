@@ -1,4 +1,6 @@
-# POC Documentation
+# POC Elastic Docker monitoring
+
+Use Elasticsearch, Kibana , Metric- and PAcketbeat for Monitoring a Docker Environment
 
 ## ELK Stack for Monitoring
 
@@ -326,21 +328,3 @@ USER packetbeat
 - run container
 
 `> docker run -d --name packet --net=elastic --cap-add=NET_ADMIN --cap-add=NET_RAW <image_name>`
-
-
-## GitLab custom CI/CD Pipeline & Container Registry
-
-- Pull images
-
-`> docker pull gitlab/gitlab-ce`
-
-- run container
-
-`docker run -d --name gitlab --restart always -v /srv/gitlab/config:/etc/gitlab -v /srv/gitlab/data:/var/opt/gitlab -v /srv/gitlab/logs:/var/log/gitlab -p 80:80 -p 443:443 -p 22:22 gitlab/gitlab-ce`
-
-- create gitlab-ci.yml
-
-
-## Hugo static Website Generator
-
-- Pull images
