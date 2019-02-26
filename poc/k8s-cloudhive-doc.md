@@ -130,11 +130,6 @@ alternatively (if root)
 
 `> kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"`
 
-- create rbac file for weave-net
-```
-yaml
-```
-
 ### Add node to the cluster (remeber token from kubeadm init output)
 
 `kubeadm join <ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>`
