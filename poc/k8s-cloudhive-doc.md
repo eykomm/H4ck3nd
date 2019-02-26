@@ -1,9 +1,4 @@
-# Kubernetes@Hetzner
-
-## API Token Hetzner
-
-Kubernetes Token:
-OxdbWhIxnqkidzg8aJNEKpEJuzmEP2ea7rnMKK979Uo7XWsly5oVLMVeHDoQwEji
+# Kubernetes@Cloudhive
 
 ## Prequisites
 
@@ -47,15 +42,14 @@ Container Network Interface.
 
 ### DaemonSets
 
-
-
 ### Roles
+
 
 ## Setup Kubernetes Cluster with kubeadm
 
 ### install Docker-CE on Nodes
 
-following guide:
+following the guide:
 
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
@@ -74,7 +68,9 @@ folllowing the tutorial on:
 `> kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"`
 
 - create rbac file for weave-net
-
+```
+yaml
+```
 
 
 ### Add node to the cluster
@@ -93,11 +89,11 @@ folllowing the tutorial on:
 
 `> brew install kubernetes-cli`
 
-`scp -r user@<ip>:/home/.kube .`
+`> scp -r user@<ip>:/home/.kube .`
 
-`cp -R .kube /User/<user> `
+`> cp -R .kube /User/<user> `
 
-### create admin-yml for dashboard user
+### create admin.yml for dashboard admin user
 
 ```
 apiVersion: v1
@@ -125,11 +121,9 @@ subjects:
 
 `kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')`
 
-### Access Dashboard using proxy
+### Access Dashboard locally using proxy
 
 `> kubectl proxy`
-
-
 
 
 ### Setup Helm
