@@ -29,7 +29,13 @@ Abstract Layer for managing Pods.
 
 ### Sidecars
 
+### Secrets
+
+### Volumes
+
 ### DaemonSets
+
+### Stateful Sets
 
 ### Roles
 
@@ -198,6 +204,7 @@ https://helm.sh/docs/using_helm/#using-helm
 `> helm repo update`
 
 - search charts
+see: https://hub.helm.sh/
 
 `> helm search <chart>`
 
