@@ -35,14 +35,15 @@ Abstract Layer for managing Pods.
 
 ### RBAC / Auth
 
+Role bases acces control
+
 ### CNI / Network Plugins
 
 Container Network Interface. Handling cluster overlay networks.
 
-### Helm
+### Helm / Tiller
 
-Kubernetes Package Manager
-
+Kubernetes Package Manager. Tiller is the server / cluster part of helm.
 
 ## Setup Kubernetes Cluster with kubeadm
 
@@ -170,5 +171,54 @@ https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterro
 
 `> kubectl proxy`
 
+Dashboard should be available at:
+
+http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 
 ### Setup Helm & Tiller
+
+following guide:
+
+https://helm.sh/docs/using_helm/#installing-helm
+
+- install helm locally (MacOSX)
+
+`> brew install kubernetes-helm`
+
+- initialize Helm (setup Tiller in cluster)
+
+`> helm init`
+
+### Helm usage
+
+https://helm.sh/docs/using_helm/#using-helm
+
+- update helm repository
+
+`> helm repo update`
+
+- search charts
+
+`> helm search <chart>`
+
+- install chart (official stable)
+
+`> helm install <stable/chart>`
+
+- inpect chart before installing
+
+`> helm inspect values <chart>`
+
+- show staus of charts
+
+`> helm status <chart>`
+
+- list releases
+
+`> helm ls`
+
+`> helm list`
+
+- uninstall releases
+
+`> helm delete <release>`
