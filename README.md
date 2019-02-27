@@ -12,4 +12,8 @@ POC for container based hardened Backend
 
 - Gitlab
 - Monitoring via Elasticsearch 
-- 
+- Kubernetes Container Platform
+  - Helm
+  - kube-hunter
+  - k8s dashboard
+- ...
