@@ -31,8 +31,6 @@ Abstract Layer for managing Pods.
 
 ### Secrets
 
-### Volumes
-
 ### DaemonSets
 
 ### Stateful Sets
