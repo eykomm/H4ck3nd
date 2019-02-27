@@ -193,7 +193,7 @@ https://helm.sh/docs/using_helm/#installing-helm
 
 `> helm init`
 
-### Helm usage
+#### Helm usage
 
 https://helm.sh/docs/using_helm/#using-helm
 
@@ -227,3 +227,30 @@ see: https://hub.helm.sh/
 - uninstall releases
 
 `> helm delete <release>`
+
+### POC Aquasec kube-hunter
+
+See: https://github.com/aquasecurity/kube-hunter
+
+- create job.yml
+
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kube-hunter
+spec:
+  template:
+    spec:
+      containers:
+      - name: kube-hunter
+        image: aquasec/kube-hunter 
+        command: ["python", "kube-hunter.py"]
+        args: ["--pod"]
+      restartPolicy: Never
+  backoffLimit: 4
+```
+
+- run kube-hunter pod scanner
+
+`> kubectl create <job>.yml`
