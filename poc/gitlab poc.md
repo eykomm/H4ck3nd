@@ -20,6 +20,7 @@
 ```
 helm upgrade --install gitlab gitlab/gitlab --timeout 600 --set global.hosts.domain=cloudhive.eu --set global.hosts.externalIP=116.203.124.88 --set certmanager-issuer.email=info@cloudhive.eu.com --set gitlab.migrations.image.repository=registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ce --set gitlab.sidekiq.image.repository=registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ce --set gitlab.unicorn.image.repository=registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ce --set gitlab.unicorn.workhorse.image=registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ce --set gitlab.task-runner.image.repository=registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ce
 ```
+
 - show root pw for initial login
 
 `kubectl get secret gitlab-gitlab-initial-root-password -ojsonpath={.data.password} | base64 --decode ; echo`

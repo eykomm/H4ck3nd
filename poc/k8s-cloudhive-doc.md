@@ -169,7 +169,7 @@ https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterro
 
 - show dashboard token for login
 
-`kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep dashboard | awk '{print $1}')`
+`> kubectl -n kube-system describe secret default| awk '$1=="token:"{print $2}'`
 
 - Access Dashboard locally using proxy
 
@@ -244,7 +244,7 @@ spec:
     spec:
       containers:
       - name: kube-hunter
-        image: aquasec/kube-hunter 
+        image: aquasec/kube-hunter
         command: ["python", "kube-hunter.py"]
         args: ["--pod"]
       restartPolicy: Never
