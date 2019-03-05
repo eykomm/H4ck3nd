@@ -16,6 +16,12 @@ Use Elasticsearch, Kibana , Metric- and PAcketbeat for Monitoring a Docker Envir
 
 `> docker network create elastic`
 
+- Start container
+
+`> docker run --detach --net=elastic --name=elasticsearch -e "discovery.type=single-node" -p 9200:9200 -p 9300:9300 docker.elastic.co/elasticsearch/elasticsearch:6.6.1`
+
+`> docker run --detach --net=elastic --name=kibana -p 5601:5601 docker.elastic.co/kibana/kibana:6.6.1`
+
 ### Metricbeat
 
 - Create Metric Beat yml
@@ -66,11 +72,7 @@ logging.files:
 
 ```
 
-- Start container
-
-`> docker run --detach --net=elastic --name=elasticsearch -e "discovery.type=single-node" -p 9200:9200 -p 9300:9300 docker.elastic.co/elasticsearch/elasticsearch:6.6.1`
-
-`> docker run --detach --net=elastic --name=kibana -p 5601:5601 docker.elastic.co/kibana/kibana:6.6.1`
+- Start Metric Beat Container
 
 `> docker run --detach --net=elastic --name=metric -u root -v /Users/lars/Hackspace/Docker/metricbeat/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml -v /var/run/docker.sock:/var/run/docker.sock docker.elastic.co/beats/metricbeat:6.6.1`
 
