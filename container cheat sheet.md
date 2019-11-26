@@ -235,7 +235,7 @@ https://github.com/vichargrave/espcap
 
 - create Wireshark Mapping file for elasticsearch
 
-`>tshark -G elastic-mapping` > wireshark_ek_mapping.json
+`>tshark -G elastic-mapping > wireshark_ek_mapping.json `
 
 Import mapping JSON to Index pattern in Elastic.
 
