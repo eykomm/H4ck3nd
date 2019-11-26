@@ -224,3 +224,33 @@ Some useful commands i found helpful while playing around with containers
 `> docker run --detach --net=elastic --name=kibana -p 5601:5601 docker.elastic.co/kibana/kibana:6.6.1`
 
 `> docker run --detach --net=elastic --name=metric -u root -v /Users/lars/Hackspace/Docker/metricbeat/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml -v /var/run/docker.sock:/var/run/docker.sock docker.elastic.co/beats/metricbeat:6.6.1`
+
+### Network Analysis Wireshark into Elasticsearch
+
+https://www.elastic.co/blog/analyzing-network-packets-with-wireshark-elasticsearch-and-kibana
+
+https://github.com/vichargrave/espcap
+
+#### Create PUT Mapping file for Elasticsearch
+
+- create Wireshark Mapping file for elasticsearch
+
+`>tshark -G elastic-mapping` > wireshark_ek_mapping.json
+
+Import mapping JSON to Index pattern in Elastic.
+
+#### Create JSON Packetfile 
+
+- create live capture file for elasticsearch
+
+`> tshark -i <networkinterface> -T ek > capture.json`
+
+- create file from precaptured traffic
+
+`> tshark -r <file.pcap> -T ek >precaptured.json`
+
+#### Import Packetfile to Elasticsearch
+
+- Import the packet file (file is is stored on localhost running elasticsearch)
+
+`> curl -s -H "Content-Type: application/x-ndjson" -XPOST "localhost:9200/_bulk" --data-binary "@capture.json"`
